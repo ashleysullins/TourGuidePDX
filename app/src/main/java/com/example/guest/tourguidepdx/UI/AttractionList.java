@@ -52,12 +52,14 @@ public class AttractionList extends AppCompatActivity {
 
         gestureEvent = (TextView) findViewById(R.id.GestureEvent);
 
+        mAttractionLib = new AttractionLib();
+        mAttraction = mAttractionLib.getAttractions().get(0);
         mName = (TextView) findViewById(R.id.attractionName);
         mAddress = (TextView) findViewById(R.id.attractionAddress);
         mImage = (ImageView) findViewById(R.id.attractionImage);
         mDescription = (TextView) findViewById(R.id.attractionDescription);
-        mAttractionLib = new AttractionLib();
-        mAttraction = mAttractionLib.getAttractions().get(0);
+        setLayoutContent();
+
 
         mImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,9 +87,12 @@ public class AttractionList extends AppCompatActivity {
             String swipe = "";
             float sensitvity = 50;
 
-            if((e1.getX() - e2.getX()) > sensitvity){
+            if((e1.getX() - e2.getX()) > sensitvity) {
                 mAttraction = mAttractionLib.nextAttraction(mAttraction);
                 setLayoutContent();
+            }else if((e2.getX() - e1.getX()) > sensitvity){
+                    mAttraction = mAttractionLib.previousAttraction(mAttraction);
+                    setLayoutContent();
             }else{
                 return false;
             }

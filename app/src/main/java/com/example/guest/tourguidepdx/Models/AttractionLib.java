@@ -65,4 +65,15 @@ public class AttractionLib {
             return mAttractions.get(index + 1);
         }
     }
+
+    public Attraction previousAttraction (Attraction attraction) {
+        int index = mAttractions.indexOf(attraction);
+        if (index == mAttractions.size() - 1 ) {
+            return mAttractions.get(0);
+        } else if (index == 0) {
+            return mAttractions.get(mAttractions.size() - 1);
+        } else {
+            return mAttractions.get(index - 1);
+        }
+    }
 }
