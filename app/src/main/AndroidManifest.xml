@@ -24,6 +24,30 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.guest.tourguidepdx.MainActivity" />
         </activity>
+        <activity
+            android:name=".Food"
+            android:label="@string/title_activity_food"
+            android:parentActivityName=".LetsGo" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.guest.tourguidepdx.LetsGo" />
+        </activity>
+        <activity
+            android:name=".Drink"
+            android:label="@string/title_activity_drink"
+            android:parentActivityName=".LetsGo" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.guest.tourguidepdx.LetsGo" />
+        </activity>
+        <activity
+            android:name=".Attractions"
+            android:label="@string/title_activity_attractions"
+            android:parentActivityName=".LetsGo" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.guest.tourguidepdx.LetsGo" />
+        </activity>
     </application>
 
 </manifest>
