@@ -27,6 +27,30 @@ public class AttractionLib {
                 R.drawable.powells,
                 "The largest bookstore in the world (maybe)."
         ));
+
+        mAttractions.add(new Attraction(
+                "Lan Su Chinese Garden",
+                "Chinatown",
+                "http://www.lansugarden.org/",
+                R.drawable.lansu,
+                "Chinese garden in SW portland. The only attraction in Chinatown."
+        ));
+
+        mAttractions.add(new Attraction(
+                "Washington Park",
+                "Take the Red Line until you get there",
+                "http://washingtonparkpdx.org/",
+                R.drawable.washington,
+                "Includes the Zoo, Japanese Garden, Rose garden, Hoyt Arboretum"
+        ));
+
+        mAttractions.add(new Attraction(
+                "The Grotto",
+                "8840 NE Skidmore Street",
+                "http://thegrotto.org/",
+                R.drawable.grotto,
+                "Catholic botanical garden. Christmas Festival of Lights. Friday after Thanksgiving thru December 30."
+        ));
     }
 
     public ArrayList<Attraction> getAttractions() {

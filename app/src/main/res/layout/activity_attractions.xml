@@ -17,13 +17,14 @@
         android:id="@+id/attractionName"
         android:layout_marginTop="28dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:textSize="30dp"/>
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:id="@+id/attractionImage"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:src="@drawable/powells"
         android:layout_below="@+id/attractionName"
         android:layout_centerHorizontal="true"/>
@@ -49,5 +50,14 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="38dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Swipe for more"
+        android:id="@+id/GestureEvent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/attractionImage"
+        android:layout_alignEnd="@+id/attractionImage"/>
 
 </RelativeLayout>
