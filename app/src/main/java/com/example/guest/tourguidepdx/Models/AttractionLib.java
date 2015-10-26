@@ -2,6 +2,8 @@ package com.example.guest.tourguidepdx.Models;
 
 import com.example.guest.tourguidepdx.R;
 
+import org.w3c.dom.Attr;
+
 import java.util.ArrayList;
 
 /**
@@ -29,5 +31,14 @@ public class AttractionLib {
 
     public ArrayList<Attraction> getAttractions() {
         return mAttractions;
+    }
+
+    public Attraction nextAttraction (Attraction attraction) {
+        int index = mAttractions.indexOf(attraction);
+        if (index == mAttractions.size() - 1 ){
+            return mAttractions.get(0);
+        } else {
+            return mAttractions.get(index + 1);
+        }
     }
 }

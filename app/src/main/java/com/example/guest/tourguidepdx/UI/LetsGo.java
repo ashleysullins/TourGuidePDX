@@ -61,7 +61,7 @@ public class LetsGo extends AppCompatActivity {
         mAttractionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LetsGo.this, Attractions.class);
+                Intent intent = new Intent(LetsGo.this, AttractionList.class);
                 startActivity(intent);
             }
         });

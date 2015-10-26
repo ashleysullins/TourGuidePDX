@@ -41,7 +41,7 @@
                 android:value=".UI.LetsGo" />
         </activity>
         <activity
-            android:name=".UI.Attractions"
+            android:name=".UI.AttractionList"
             android:label="@string/title_activity_attractions"
             android:parentActivityName=".UI.LetsGo" >
             <meta-data
