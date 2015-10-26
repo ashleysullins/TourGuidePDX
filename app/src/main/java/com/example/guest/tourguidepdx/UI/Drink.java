@@ -1,9 +1,11 @@
-package com.example.guest.tourguidepdx;
+package com.example.guest.tourguidepdx.UI;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.example.guest.tourguidepdx.R;
 
 public class Drink extends AppCompatActivity {
 
