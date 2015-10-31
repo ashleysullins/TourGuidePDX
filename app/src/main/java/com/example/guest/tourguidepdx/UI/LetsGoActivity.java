@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.example.guest.tourguidepdx.R;
 
-public class LetsGo extends AppCompatActivity {
+public class LetsGoActivity extends AppCompatActivity {
 
     private Button mFoodButton;
     private Button mDrinkButton;
@@ -41,7 +41,7 @@ public class LetsGo extends AppCompatActivity {
         mFoodButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LetsGo.this, Food.class);
+                Intent intent = new Intent(LetsGoActivity.this, FoodActivity.class);
                 startActivity(intent);
             }
         });
@@ -51,7 +51,7 @@ public class LetsGo extends AppCompatActivity {
         mDrinkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LetsGo.this, Drink.class);
+                Intent intent = new Intent(LetsGoActivity.this, DrinkActivity.class);
                 startActivity(intent);
             }
         });
@@ -61,7 +61,7 @@ public class LetsGo extends AppCompatActivity {
         mAttractionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LetsGo.this, AttractionList.class);
+                Intent intent = new Intent(LetsGoActivity.this, AttractionListActivity.class);
                 startActivity(intent);
             }
         });

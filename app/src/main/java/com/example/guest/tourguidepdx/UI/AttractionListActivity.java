@@ -20,7 +20,7 @@ import com.example.guest.tourguidepdx.R;
 
 import org.w3c.dom.Text;
 
-public class AttractionList extends AppCompatActivity {
+public class AttractionListActivity extends AppCompatActivity {
 
     TextView gestureEvent;
 

@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UI.LetsGo"
+            android:name=".UI.LetsGoActivity"
             android:label="@string/title_activity_lets_go"
             android:parentActivityName=".UI.MainActivity" >
             <meta-data
@@ -25,28 +25,28 @@
                 android:value=".UI.MainActivity" />
         </activity>
         <activity
-            android:name=".UI.Food"
+            android:name=".UI.FoodActivity"
             android:label="@string/title_activity_food"
-            android:parentActivityName=".UI.LetsGo" >
+            android:parentActivityName=".UI.LetsGoActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".UI.LetsGo" />
+                android:value=".UI.LetsGoActivity" />
         </activity>
         <activity
-            android:name=".UI.Drink"
+            android:name=".UI.DrinkActivity"
             android:label="@string/title_activity_drink"
-            android:parentActivityName=".UI.LetsGo" >
+            android:parentActivityName=".UI.LetsGoActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".UI.LetsGo" />
+                android:value=".UI.LetsGoActivity" />
         </activity>
         <activity
-            android:name=".UI.AttractionList"
+            android:name=".UI.AttractionListActivity"
             android:label="@string/title_activity_attractions"
-            android:parentActivityName=".UI.LetsGo" >
+            android:parentActivityName=".UI.LetsGoActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".UI.LetsGo" />
+                android:value=".UI.LetsGoActivity" />
         </activity>
     </application>
 

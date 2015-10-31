@@ -7,18 +7,18 @@ import android.view.MenuItem;
 
 import com.example.guest.tourguidepdx.R;
 
-public class Drink extends AppCompatActivity {
+public class FoodActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_drink);
+        setContentView(R.layout.activity_food);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_drink, menu);
+        getMenuInflater().inflate(R.menu.menu_food, menu);
         return true;
     }
 
