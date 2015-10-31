@@ -11,4 +11,5 @@
     <string name="title_activity_food">Food</string>
     <string name="title_activity_drink">Drink</string>
     <string name="title_activity_attractions">Attractions</string>
+    <string name="title_activity_add_food">AddFoodActivity</string>
 </resources>

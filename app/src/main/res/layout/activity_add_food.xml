@@ -1,0 +1,59 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.guest.tourguidepdx.UI.AddFoodActivity">
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/foodName"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="47dp"
+        android:hint="Name" />
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/foodAddress"
+        android:layout_below="@+id/foodName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="37dp"
+        android:hint="Address" />
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/foodWebsite"
+        android:layout_below="@+id/foodAddress"
+        android:layout_alignLeft="@+id/foodAddress"
+        android:layout_alignStart="@+id/foodAddress"
+        android:layout_marginTop="37dp"
+        android:hint="Website" />
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/foodDescription"
+        android:layout_marginTop="37dp"
+        android:hint="Description"
+        android:layout_below="@+id/foodWebsite"
+        android:layout_alignLeft="@+id/foodWebsite"
+        android:layout_alignStart="@+id/foodWebsite" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:id="@+id/foodSubmit"
+        android:layout_below="@+id/foodDescription"
+        android:layout_alignRight="@+id/foodDescription"
+        android:layout_alignEnd="@+id/foodDescription"
+        android:layout_marginTop="62dp" />
+
+</RelativeLayout>

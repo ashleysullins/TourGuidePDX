@@ -30,7 +30,7 @@ public class AttractionListActivity extends AppCompatActivity {
     private TextView mDescription;
 
     private AttractionLib mAttractionLib;
-    private com.example.guest.tourguidepdx.Models.Attraction mAttraction;
+    private Attraction mAttraction;
 
 
     @Override
