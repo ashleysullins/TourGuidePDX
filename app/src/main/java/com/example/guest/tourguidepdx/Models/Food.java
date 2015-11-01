@@ -36,14 +36,14 @@ public class Food extends Model {
         super();
     }
 
-    public Food(String name, String address, String website, String description, FoodType category) {
+    public Food(String name, FoodType category) {
         super();
         mCategory = category;
         mName = name;
-        mAddress = address;
-        mWebsite = website;
-//        mImage = image;
-        mDescription = description;
+//        mAddress = address;
+//        mWebsite = website;
+////        mImage = image;
+//        mDescription = description;
     }
 
     public String getName() {

@@ -45,7 +45,6 @@ public class FoodActivity extends ListActivity {
         mCategory = FoodType.find(name);
 
         mFood = new ArrayList<String>();
-
         for (Food food : mCategory.food() ) {
             mFood.add(food.getName());
         }
@@ -53,10 +52,10 @@ public class FoodActivity extends ListActivity {
         mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mFood);
         setListAdapter(mAdapter);
 
-        mName = (TextView) findViewById(R.id.foodName);
-        mAddress = (TextView) findViewById(R.id.foodAddress);
-//        mImage = (ImageView) findViewById(R.id.foodImage);
-        mDescription = (TextView) findViewById(R.id.foodDescription);
+//        mName = (TextView) findViewById(R.id.foodName);
+//        mAddress = (TextView) findViewById(R.id.foodAddress);
+////        mImage = (ImageView) findViewById(R.id.foodImage);
+//        mDescription = (TextView) findViewById(R.id.foodDescription);
 
 
 //        mImage.setOnClickListener(new View.OnClickListener() {

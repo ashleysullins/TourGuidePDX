@@ -1,5 +1,6 @@
 package com.example.guest.tourguidepdx.UI;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -38,6 +39,10 @@ public class AddFoodActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 addNewFood();
+                String name = getIntent().getStringExtra("categoryName");
+                Intent intent = new Intent(AddFoodActivity.this, FoodActivity.class);
+                intent.putExtra("categoryName", name);
+                startActivity(intent);
             }
         });
 
@@ -49,8 +54,9 @@ public class AddFoodActivity extends AppCompatActivity {
         String foodWebsite = mFoodWebsite.getText().toString();
         String foodDescription = mFoodDescription.getText().toString();
 
-        Food newFood = new Food(foodName, foodAddress, foodWebsite, foodDescription, mCategory);
+        Food newFood = new Food(foodName, mCategory);
         newFood.save();
+
     }
 
 }

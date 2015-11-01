@@ -38,7 +38,7 @@ public class FoodType extends Model{
     }
 
     public List<Food> food() {
-        return getMany(Food.class, "FoodType");
+        return getMany(Food.class, "Category");
     }
 
     public static FoodType find(String category) {
