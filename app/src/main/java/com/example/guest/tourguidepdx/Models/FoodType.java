@@ -40,4 +40,11 @@ public class FoodType extends Model{
     public List<Food> food() {
         return getMany(Food.class, "FoodType");
     }
+
+    public static FoodType find(String category) {
+        return new Select()
+                .from(FoodType.class)
+                .where("Category = ? ", category)
+                .executeSingle();
+    }
 }

@@ -1,11 +1,13 @@
 package com.example.guest.tourguidepdx.UI;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 
 import com.example.guest.tourguidepdx.Models.FoodType;
 import com.example.guest.tourguidepdx.R;
@@ -42,10 +44,20 @@ public class FoodTypeActivity extends ListActivity {
         });
     }
 
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id){
+        super.onListItemClick(l, v, position, id);
+        String thisCategoryName = mCategories.get(position);
+        Intent intent = new Intent(this, FoodActivity.class);
+        intent.putExtra("categoryName", thisCategoryName);
+        startActivity(intent);
+    }
+
     private void addCategory() {
         String name = mAddCategoryText.getText().toString();
         FoodType category = new FoodType(name);
         category.save();
+        mCategories.add(name);
         mAdapter.notifyDataSetChanged();
     }
 

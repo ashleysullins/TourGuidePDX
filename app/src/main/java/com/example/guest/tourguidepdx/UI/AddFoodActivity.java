@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.guest.tourguidepdx.Models.Food;
+import com.example.guest.tourguidepdx.Models.FoodType;
 import com.example.guest.tourguidepdx.R;
 
 public class AddFoodActivity extends AppCompatActivity {
@@ -17,6 +18,7 @@ public class AddFoodActivity extends AppCompatActivity {
     private EditText mFoodWebsite;
     private EditText mFoodDescription;
     private Button mFoodSubmit;
+    private FoodType mCategory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,9 @@ public class AddFoodActivity extends AppCompatActivity {
         mFoodWebsite = (EditText) findViewById(R.id.foodWebsite);
         mFoodDescription = (EditText) findViewById(R.id.foodDescription);
         mFoodSubmit = (Button) findViewById(R.id.foodSubmit);
+
+        String name = getIntent().getStringExtra("categoryName");
+        mCategory = FoodType.find(name);
 
         mFoodSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,10 +48,9 @@ public class AddFoodActivity extends AppCompatActivity {
         String foodAddress = mFoodAddress.getText().toString();
         String foodWebsite = mFoodWebsite.getText().toString();
         String foodDescription = mFoodDescription.getText().toString();
-        int foodPicture = 1;
 
-//        Food newFood = new Food(foodName, foodAddress, foodWebsite, foodPicture, foodDescription);
-//        newFood.save();
+        Food newFood = new Food(foodName, foodAddress, foodWebsite, foodDescription, mCategory);
+        newFood.save();
     }
 
 }

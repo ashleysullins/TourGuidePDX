@@ -23,8 +23,8 @@ public class Food extends Model {
     @Column(name = "Website")
     private String mWebsite;
 
-    @Column(name = "Image")
-    private int mImage;
+//    @Column(name = "Image")
+//    private int mImage;
 
     @Column(name =  "Description")
     private String mDescription;
@@ -36,13 +36,13 @@ public class Food extends Model {
         super();
     }
 
-    public Food(String name, String address, String website, int image, String description, FoodType category) {
+    public Food(String name, String address, String website, String description, FoodType category) {
         super();
         mCategory = category;
         mName = name;
         mAddress = address;
         mWebsite = website;
-        mImage = image;
+//        mImage = image;
         mDescription = description;
     }
 
@@ -70,13 +70,13 @@ public class Food extends Model {
         this.mWebsite = website;
     }
 
-    public int getImage() {
-        return mImage;
-    }
-
-    public void setImage(int image) {
-        this.mImage = image;
-    }
+//    public int getImage() {
+//        return mImage;
+//    }
+//
+//    public void setImage(int image) {
+//        this.mImage = image;
+//    }
 
     public String getDescription() {
         return mDescription;

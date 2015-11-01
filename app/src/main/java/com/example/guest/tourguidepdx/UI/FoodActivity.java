@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.guest.tourguidepdx.Models.Food;
+import com.example.guest.tourguidepdx.Models.FoodType;
 import com.example.guest.tourguidepdx.R;
 
 import org.w3c.dom.Text;
@@ -26,8 +27,6 @@ import java.util.List;
 
 public class FoodActivity extends ListActivity {
 
-    TextView gestureEvent;
-
     private TextView mName;
     private TextView mAddress;
     private ImageView mImage;
@@ -35,17 +34,24 @@ public class FoodActivity extends ListActivity {
     private TextView mAddFood;
     private ArrayList<String> mFood;
     private ArrayAdapter<String> mAdapter;
+    private FoodType mCategory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food);
-        gestureEvent = (TextView) findViewById(R.id.GestureEvent);
 
-        mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_gallery_item, mFood);
+        String name = getIntent().getStringExtra("categoryName");
+        mCategory = FoodType.find(name);
+
+        mFood = new ArrayList<String>();
+
+        for (Food food : mCategory.food() ) {
+            mFood.add(food.getName());
+        }
+
+        mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mFood);
         setListAdapter(mAdapter);
-
-        mFood = new ArrayList<>();
 
         mName = (TextView) findViewById(R.id.foodName);
         mAddress = (TextView) findViewById(R.id.foodAddress);
@@ -66,7 +72,9 @@ public class FoodActivity extends ListActivity {
         mAddFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String name = getIntent().getStringExtra("categoryName");
                 Intent intent = new Intent(FoodActivity.this, AddFoodActivity.class);
+                intent.putExtra("categoryName", name);
                 startActivity(intent);
             }
         });
