@@ -29,12 +29,16 @@ public class Food extends Model {
     @Column(name =  "Description")
     private String mDescription;
 
+    @Column(name = "Category")
+    private FoodType mCategory;
+
     public Food() {
         super();
     }
 
-    public Food(String name, String address, String website, int image, String description) {
+    public Food(String name, String address, String website, int image, String description, FoodType category) {
         super();
+        mCategory = category;
         mName = name;
         mAddress = address;
         mWebsite = website;
@@ -80,6 +84,14 @@ public class Food extends Model {
 
     public void setDescription(String description) {
         this.mDescription = description;
+    }
+
+    public FoodType getCategory() {
+        return mCategory;
+    }
+
+    public void setCategory(FoodType category) {
+        this.mCategory = category;
     }
 
     public static List<Food> all() {

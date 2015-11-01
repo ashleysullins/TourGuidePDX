@@ -1,5 +1,6 @@
 package com.example.guest.tourguidepdx.UI;
 
+import android.app.ListActivity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
@@ -23,25 +24,54 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FoodActivity extends AppCompatActivity {
+public class FoodActivity extends ListActivity {
 
+    TextView gestureEvent;
+
+    private TextView mName;
+    private TextView mAddress;
+    private ImageView mImage;
+    private TextView mDescription;
     private TextView mAddFood;
+    private ArrayList<String> mFood;
+    private ArrayAdapter<String> mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food);
+        gestureEvent = (TextView) findViewById(R.id.GestureEvent);
+
+        mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_gallery_item, mFood);
+        setListAdapter(mAdapter);
+
+        mFood = new ArrayList<>();
+
+        mName = (TextView) findViewById(R.id.foodName);
+        mAddress = (TextView) findViewById(R.id.foodAddress);
+//        mImage = (ImageView) findViewById(R.id.foodImage);
+        mDescription = (TextView) findViewById(R.id.foodDescription);
+
+
+//        mImage.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(mFood.getWebsite()));
+//                startActivity(intent);
+//            }
+//        });
 
         mAddFood = (TextView) findViewById(R.id.addFood);
 
         mAddFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (FoodActivity.this, AddFoodActivity.class);
+                Intent intent = new Intent(FoodActivity.this, AddFoodActivity.class);
                 startActivity(intent);
             }
         });
 
     }
+
 
 }

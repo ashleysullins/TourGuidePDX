@@ -65,6 +65,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.guest.tourguidepdx.UI.FoodActivity" />
         </activity>
+        <activity
+            android:name=".UI.FoodTypeActivity"
+            android:label="@string/title_activity_food_type"
+            android:parentActivityName=".UI.LetsGoActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.guest.tourguidepdx.UI.LetsGoActivity" />
+        </activity>
     </application>
 
 </manifest>

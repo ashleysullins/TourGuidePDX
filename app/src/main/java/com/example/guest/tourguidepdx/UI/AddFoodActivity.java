@@ -45,8 +45,8 @@ public class AddFoodActivity extends AppCompatActivity {
         String foodDescription = mFoodDescription.getText().toString();
         int foodPicture = 1;
 
-        Food newFood = new Food(foodName, foodAddress, foodWebsite, foodPicture, foodDescription);
-        newFood.save();
+//        Food newFood = new Food(foodName, foodAddress, foodWebsite, foodPicture, foodDescription);
+//        newFood.save();
     }
 
 }
