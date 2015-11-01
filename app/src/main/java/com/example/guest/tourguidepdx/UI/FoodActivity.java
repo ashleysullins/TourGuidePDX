@@ -16,6 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.guest.tourguidepdx.Adapters.FoodAdapter;
 import com.example.guest.tourguidepdx.Models.Food;
 import com.example.guest.tourguidepdx.Models.FoodType;
 import com.example.guest.tourguidepdx.R;
@@ -32,8 +33,8 @@ public class FoodActivity extends ListActivity {
     private ImageView mImage;
     private TextView mDescription;
     private TextView mAddFood;
-    private ArrayList<String> mFood;
-    private ArrayAdapter<String> mAdapter;
+    private ArrayList<Food> mFood;
+    private FoodAdapter mAdapter;
     private FoodType mCategory;
 
     @Override
@@ -43,28 +44,22 @@ public class FoodActivity extends ListActivity {
 
         String name = getIntent().getStringExtra("categoryName");
         mCategory = FoodType.find(name);
+        mFood = (ArrayList) Food.all();
 
-        mFood = new ArrayList<String>();
-        for (Food food : mCategory.food() ) {
-            mFood.add(food.getName());
-        }
+//        mFood = new ArrayList<>();
+//        for (Food food : mCategory.food() ) {
+//            mFood.add(food.getName());
+//        }
 
-        mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mFood);
+        mAdapter = new FoodAdapter(this, mFood);
         setListAdapter(mAdapter);
 
-//        mName = (TextView) findViewById(R.id.foodName);
-//        mAddress = (TextView) findViewById(R.id.foodAddress);
-////        mImage = (ImageView) findViewById(R.id.foodImage);
-//        mDescription = (TextView) findViewById(R.id.foodDescription);
+        mName = (TextView) findViewById(R.id.foodName);
+        mAddress = (TextView) findViewById(R.id.foodAddress);
+//        mImage = (ImageView) findViewById(R.id.foodImage);
+        mDescription = (TextView) findViewById(R.id.foodDescription);
 
 
-//        mImage.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(mFood.getWebsite()));
-//                startActivity(intent);
-//            }
-//        });
 
         mAddFood = (TextView) findViewById(R.id.addFood);
 
