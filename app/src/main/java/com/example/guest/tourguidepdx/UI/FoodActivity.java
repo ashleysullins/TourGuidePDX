@@ -46,19 +46,13 @@ public class FoodActivity extends ListActivity {
         mCategory = FoodType.find(name);
         mFood = (ArrayList) Food.all(mCategory.getId());
 
-//        mFood = new ArrayList<>();
-//        for (Food food : mCategory.food() ) {
-//            mFood.add(food.getName());
-//        }
 
         mAdapter = new FoodAdapter(this, mFood);
         setListAdapter(mAdapter);
 
         mName = (TextView) findViewById(R.id.foodName);
         mAddress = (TextView) findViewById(R.id.foodAddress);
-//        mImage = (ImageView) findViewById(R.id.foodImage);
         mDescription = (TextView) findViewById(R.id.foodDescription);
-
 
 
         mAddFood = (TextView) findViewById(R.id.addFood);

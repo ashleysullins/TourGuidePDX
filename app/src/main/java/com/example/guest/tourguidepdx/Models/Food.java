@@ -101,10 +101,4 @@ public class Food extends Model {
                 .execute();
     }
 
-//    public static List<Food> find(String category) {
-//        return new Select()
-//                .from(Food.class)
-//                .where("Category = ? ", category)
-//                .execute();
-//    }
 }

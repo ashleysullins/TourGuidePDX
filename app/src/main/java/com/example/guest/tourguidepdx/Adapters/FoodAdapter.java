@@ -1,14 +1,21 @@
 package com.example.guest.tourguidepdx.Adapters;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.media.Image;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.guest.tourguidepdx.Models.Food;
 import com.example.guest.tourguidepdx.R;
+import com.example.guest.tourguidepdx.UI.FoodTypeActivity;
 
 import java.util.ArrayList;
 
@@ -49,19 +56,54 @@ public class FoodAdapter extends BaseAdapter {
             holder.foodName = (TextView) convertView.findViewById(R.id.foodName);
             holder.foodAddress = (TextView) convertView.findViewById(R.id.foodAddress);
             holder.foodDescription = (TextView) convertView.findViewById(R.id.foodDescription);
-            holder.foodWebsite = (TextView) convertView.findViewById(R.id.foodWebsite);
+            holder.foodWebsite = (ImageView) convertView.findViewById(R.id.foodWebsite);
+            holder.foodDelete = (ImageView) convertView.findViewById(R.id.foodDelete);
 
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        Food food = mFood.get(position);
+        final Food food = mFood.get(position);
 
         holder.foodName.setText(food.getName());
         holder.foodAddress.setText(food.getAddress());
         holder.foodDescription.setText(food.getDescription());
-        holder.foodWebsite.setText(food.getWebsite());
+        holder.foodWebsite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(food.getWebsite()));
+                mContext.startActivity(intent);
+            }
+        });
+
+        holder.foodDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (which){
+                            case DialogInterface.BUTTON_POSITIVE:
+                                food.delete();
+                                Intent intent = new Intent(mContext, FoodTypeActivity.class);
+                                mContext.startActivity(intent);
+                                break;
+
+                            case DialogInterface.BUTTON_NEGATIVE:
+                                break;
+                        }
+                    }
+                };
+
+                AlertDialog show = new AlertDialog.Builder(mContext)
+                        .setTitle("Alert")
+                        .setMessage("Are you sure you want to delete?")
+                        .setPositiveButton("Yes", dialogClickListener)
+                        .setNegativeButton("No", dialogClickListener)
+                        .show();
+            }
+        });
 
         return convertView;
     }
@@ -70,6 +112,7 @@ public class FoodAdapter extends BaseAdapter {
         TextView foodName;
         TextView foodAddress;
         TextView foodDescription;
-        TextView foodWebsite;
+        ImageView foodWebsite;
+        ImageView foodDelete;
     }
 }
