@@ -44,7 +44,7 @@ public class FoodActivity extends ListActivity {
 
         String name = getIntent().getStringExtra("categoryName");
         mCategory = FoodType.find(name);
-        mFood = (ArrayList) Food.all();
+        mFood = (ArrayList) Food.all(mCategory.getId());
 
 //        mFood = new ArrayList<>();
 //        for (Food food : mCategory.food() ) {

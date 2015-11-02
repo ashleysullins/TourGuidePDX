@@ -94,7 +94,17 @@ public class Food extends Model {
         this.mCategory = category;
     }
 
-    public static List<Food> all() {
-        return new Select().from(Food.class).execute();
+    public static List<Food> all(long category) {
+        return new Select()
+                .from(Food.class)
+                .where("Category = ?", category)
+                .execute();
     }
+
+//    public static List<Food> find(String category) {
+//        return new Select()
+//                .from(Food.class)
+//                .where("Category = ? ", category)
+//                .execute();
+//    }
 }
