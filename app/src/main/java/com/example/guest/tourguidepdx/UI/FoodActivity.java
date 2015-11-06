@@ -2,29 +2,17 @@ package com.example.guest.tourguidepdx.UI;
 
 import android.app.ListActivity;
 import android.content.Intent;
-import android.graphics.Typeface;
-import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Layout;
-import android.view.GestureDetector;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.guest.tourguidepdx.Adapters.FoodAdapter;
+import com.example.guest.tourguidepdx.Models.Cuisine;
 import com.example.guest.tourguidepdx.Models.Food;
-import com.example.guest.tourguidepdx.Models.FoodType;
 import com.example.guest.tourguidepdx.R;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
-import java.util.List;
 
 public class FoodActivity extends ListActivity {
 
@@ -35,16 +23,16 @@ public class FoodActivity extends ListActivity {
     private TextView mAddFood;
     private ArrayList<Food> mFood;
     private FoodAdapter mAdapter;
-    private FoodType mCategory;
+    private Cuisine mCuisine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food);
 
-        String name = getIntent().getStringExtra("categoryName");
-        mCategory = FoodType.find(name);
-        mFood = (ArrayList) Food.all(mCategory.getId());
+        String name = getIntent().getStringExtra("cuisineName");
+        mCuisine = Cuisine.find(name);
+        mFood = (ArrayList) Food.all(mCuisine.getId());
 
 
         mAdapter = new FoodAdapter(this, mFood);
@@ -60,9 +48,9 @@ public class FoodActivity extends ListActivity {
         mAddFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name = getIntent().getStringExtra("categoryName");
+                String name = getIntent().getStringExtra("cuisineName");
                 Intent intent = new Intent(FoodActivity.this, AddFoodActivity.class);
-                intent.putExtra("categoryName", name);
+                intent.putExtra("cuisineName", name);
                 startActivity(intent);
             }
         });

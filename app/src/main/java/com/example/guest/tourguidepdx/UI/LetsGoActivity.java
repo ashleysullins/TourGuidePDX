@@ -41,7 +41,7 @@ public class LetsGoActivity extends AppCompatActivity {
         mFoodButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LetsGoActivity.this, FoodTypeActivity.class);
+                Intent intent = new Intent(LetsGoActivity.this, CuisineActivity.class);
                 startActivity(intent);
             }
         });

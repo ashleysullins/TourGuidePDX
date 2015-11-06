@@ -3,14 +3,12 @@ package com.example.guest.tourguidepdx.UI;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.guest.tourguidepdx.Models.Cuisine;
 import com.example.guest.tourguidepdx.Models.Food;
-import com.example.guest.tourguidepdx.Models.FoodType;
 import com.example.guest.tourguidepdx.R;
 
 public class AddFoodActivity extends AppCompatActivity {
@@ -19,7 +17,7 @@ public class AddFoodActivity extends AppCompatActivity {
     private EditText mFoodWebsite;
     private EditText mFoodDescription;
     private Button mFoodSubmit;
-    private FoodType mCategory;
+    private Cuisine mCuisine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,16 +30,16 @@ public class AddFoodActivity extends AppCompatActivity {
         mFoodDescription = (EditText) findViewById(R.id.foodDescription);
         mFoodSubmit = (Button) findViewById(R.id.foodSubmit);
 
-        String name = getIntent().getStringExtra("categoryName");
-        mCategory = FoodType.find(name);
+        String name = getIntent().getStringExtra("cuisineName");
+        mCuisine = Cuisine.find(name);
 
         mFoodSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 addNewFood();
-                String name = getIntent().getStringExtra("categoryName");
+                String name = getIntent().getStringExtra("cuisineName");
                 Intent intent = new Intent(AddFoodActivity.this, FoodActivity.class);
-                intent.putExtra("categoryName", name);
+                intent.putExtra("cuisineName", name);
                 startActivity(intent);
             }
         });
@@ -54,7 +52,7 @@ public class AddFoodActivity extends AppCompatActivity {
         String foodWebsite = mFoodWebsite.getText().toString();
         String foodDescription = mFoodDescription.getText().toString();
 
-        Food newFood = new Food(foodName, foodWebsite, foodDescription, foodAddress, mCategory);
+        Food newFood = new Food(foodName, foodWebsite, foodDescription, foodAddress, mCuisine);
         newFood.save();
 
     }

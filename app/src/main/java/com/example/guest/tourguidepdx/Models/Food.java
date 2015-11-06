@@ -23,26 +23,23 @@ public class Food extends Model {
     @Column(name = "Website")
     private String mWebsite;
 
-//    @Column(name = "Image")
-//    private int mImage;
 
     @Column(name =  "Description")
     private String mDescription;
 
-    @Column(name = "Category")
-    private FoodType mCategory;
+    @Column(name = "Cuisine")
+    private Cuisine mCuisine;
 
     public Food() {
         super();
     }
 
-    public Food(String name, String website, String description, String address, FoodType category) {
+    public Food(String name, String website, String description, String address, Cuisine cuisine) {
         super();
-        mCategory = category;
+        mCuisine = cuisine;
         mName = name;
         mAddress = address;
         mWebsite = website;
-////        mImage = image;
         mDescription = description;
     }
 
@@ -70,14 +67,6 @@ public class Food extends Model {
         this.mWebsite = website;
     }
 
-//    public int getImage() {
-//        return mImage;
-//    }
-//
-//    public void setImage(int image) {
-//        this.mImage = image;
-//    }
-
     public String getDescription() {
         return mDescription;
     }
@@ -86,18 +75,18 @@ public class Food extends Model {
         this.mDescription = description;
     }
 
-    public FoodType getCategory() {
-        return mCategory;
+    public Cuisine getCuisine() {
+        return mCuisine;
     }
 
-    public void setCategory(FoodType category) {
-        this.mCategory = category;
+    public void setCategory(Cuisine cuisines) {
+        this.mCuisine = cuisines;
     }
 
-    public static List<Food> all(long category) {
+    public static List<Food> all(long cuisine) {
         return new Select()
                 .from(Food.class)
-                .where("Category = ?", category)
+                .where("Cuisine = ?", cuisine)
                 .execute();
     }
 
