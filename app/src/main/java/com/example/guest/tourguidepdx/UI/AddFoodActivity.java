@@ -11,24 +11,23 @@ import com.example.guest.tourguidepdx.Models.Cuisine;
 import com.example.guest.tourguidepdx.Models.Food;
 import com.example.guest.tourguidepdx.R;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class AddFoodActivity extends AppCompatActivity {
-    private EditText mFoodName;
-    private EditText mFoodAddress;
-    private EditText mFoodWebsite;
-    private EditText mFoodDescription;
-    private Button mFoodSubmit;
+
+    @Bind(R.id.foodName) EditText mFoodName;
+    @Bind(R.id.foodAddress) EditText mFoodAddress;
+    @Bind(R.id.foodWebsite) EditText mFoodWebsite;
+    @Bind(R.id.foodDescription) EditText mFoodDescription;
+    @Bind(R.id.foodSubmit) Button mFoodSubmit;
     private Cuisine mCuisine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_food);
-
-        mFoodName = (EditText) findViewById(R.id.foodName);
-        mFoodAddress = (EditText) findViewById(R.id.foodAddress);
-        mFoodWebsite = (EditText) findViewById(R.id.foodWebsite);
-        mFoodDescription = (EditText) findViewById(R.id.foodDescription);
-        mFoodSubmit = (Button) findViewById(R.id.foodSubmit);
+        ButterKnife.bind(this);
 
         String name = getIntent().getStringExtra("cuisineName");
         mCuisine = Cuisine.find(name);

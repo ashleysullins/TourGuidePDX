@@ -10,16 +10,20 @@ import android.widget.TextView;
 
 import com.example.guest.tourguidepdx.R;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class LetsGoActivity extends AppCompatActivity {
 
-    private Button mFoodButton;
-    private Button mDrinkButton;
-    private Button mAttractionButton;
+    @Bind(R.id.foodButton) Button mFoodButton;
+    @Bind(R.id.drinkButton) Button mDrinkButton;
+    @Bind(R.id.attractionsButton) Button mAttractionButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lets_go);
+        ButterKnife.bind(this);
 
         // Font path
         String fontPath = "fonts/Pacifico.ttf";
@@ -35,9 +39,6 @@ public class LetsGoActivity extends AppCompatActivity {
         txtBeforeText.setTypeface(tf);
         txtCategoryText.setTypeface(tf);
 
-
-        mFoodButton = (Button) findViewById(R.id.foodButton);
-
         mFoodButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,8 +47,6 @@ public class LetsGoActivity extends AppCompatActivity {
             }
         });
 
-        mDrinkButton = (Button) findViewById(R.id.drinkButton);
-
         mDrinkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,8 +54,6 @@ public class LetsGoActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        mAttractionButton = (Button) findViewById(R.id.attractionsButton);
 
         mAttractionButton.setOnClickListener(new View.OnClickListener() {
             @Override

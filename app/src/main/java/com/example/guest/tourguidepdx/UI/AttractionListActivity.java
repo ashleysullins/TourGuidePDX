@@ -20,14 +20,15 @@ import com.example.guest.tourguidepdx.R;
 
 import org.w3c.dom.Text;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class AttractionListActivity extends AppCompatActivity {
 
-    TextView gestureEvent;
-
-    private TextView mName;
-    private TextView mAddress;
-    private ImageView mImage;
-    private TextView mDescription;
+    @Bind(R.id.attractionName) TextView mName;
+    @Bind(R.id.attractionAddress) TextView mAddress;
+    @Bind(R.id.attractionImage) ImageView mImage;
+    @Bind(R.id.attractionDescription) TextView mDescription;
 
     private AttractionLib mAttractionLib;
     private Attraction mAttraction;
@@ -37,6 +38,7 @@ public class AttractionListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attractions);
+        ButterKnife.bind(this);
 
         // Font path
         String fontPath = "fonts/Pacifico.ttf";
@@ -50,14 +52,8 @@ public class AttractionListActivity extends AppCompatActivity {
         // Applying font
         txtattractionName.setTypeface(tf);
 
-        gestureEvent = (TextView) findViewById(R.id.GestureEvent);
-
         mAttractionLib = new AttractionLib();
         mAttraction = mAttractionLib.getAttractions().get(0);
-        mName = (TextView) findViewById(R.id.attractionName);
-        mAddress = (TextView) findViewById(R.id.attractionAddress);
-        mImage = (ImageView) findViewById(R.id.attractionImage);
-        mDescription = (TextView) findViewById(R.id.attractionDescription);
         setLayoutContent();
 
 

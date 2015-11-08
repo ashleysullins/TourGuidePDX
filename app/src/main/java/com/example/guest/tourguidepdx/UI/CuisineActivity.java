@@ -14,24 +14,25 @@ import com.example.guest.tourguidepdx.R;
 
 import java.util.ArrayList;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class CuisineActivity extends ListActivity {
     private ArrayList<String> mCuisines;
-    private Button mAddCuisineButton;
-    private EditText mAddCuisineText;
+    @Bind(R.id.addCategoryButton) Button mAddCuisineButton;
+    @Bind(R.id.addCategory)  EditText mAddCuisineText;
     private ArrayAdapter<String> mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_type);
+        ButterKnife.bind(this);
 
         mCuisines = new ArrayList<String>();
         for (Cuisine cuisine: Cuisine.all()) {
             mCuisines.add(cuisine.getCuisine());
         }
-
-        mAddCuisineButton = (Button) findViewById(R.id.addCategoryButton);
-        mAddCuisineText = (EditText) findViewById(R.id.addCategory);
 
         mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mCuisines);
         setListAdapter(mAdapter);

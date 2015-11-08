@@ -14,13 +14,12 @@ import com.example.guest.tourguidepdx.R;
 
 import java.util.ArrayList;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class FoodActivity extends ListActivity {
 
-    private TextView mName;
-    private TextView mAddress;
-    private ImageView mImage;
-    private TextView mDescription;
-    private TextView mAddFood;
+    @Bind(R.id.addFood) TextView mAddFood;
     private ArrayList<Food> mFood;
     private FoodAdapter mAdapter;
     private Cuisine mCuisine;
@@ -29,6 +28,7 @@ public class FoodActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food);
+        ButterKnife.bind(this);
 
         String name = getIntent().getStringExtra("cuisineName");
         mCuisine = Cuisine.find(name);
@@ -37,13 +37,6 @@ public class FoodActivity extends ListActivity {
 
         mAdapter = new FoodAdapter(this, mFood);
         setListAdapter(mAdapter);
-
-        mName = (TextView) findViewById(R.id.foodName);
-        mAddress = (TextView) findViewById(R.id.foodAddress);
-        mDescription = (TextView) findViewById(R.id.foodDescription);
-
-
-        mAddFood = (TextView) findViewById(R.id.addFood);
 
         mAddFood.setOnClickListener(new View.OnClickListener() {
             @Override

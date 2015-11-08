@@ -10,14 +10,18 @@ import android.widget.TextView;
 
 import com.example.guest.tourguidepdx.R;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
 
-    private Button mGoButton;
+    @Bind(R.id.goButton) Button mGoButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
         // Font path
         String fontPath = "fonts/Pacifico.ttf";
@@ -30,8 +34,6 @@ public class MainActivity extends AppCompatActivity {
 
         // Applying font
         txtExternalfont.setTypeface(tf);
-
-        mGoButton = (Button) findViewById(R.id.goButton);
 
         mGoButton.setOnClickListener(new View.OnClickListener() {
             @Override
