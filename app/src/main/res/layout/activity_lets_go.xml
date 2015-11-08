@@ -55,7 +55,7 @@
         android:textStyle="bold"
         android:layout_below="@+id/scrollView"
         android:layout_centerHorizontal="true"
-        android:layout_margin="30dp"
+        android:layout_margin="10dp"
         android:textSize="25dp"/>
 
     <Button
@@ -73,10 +73,10 @@
         android:layout_height="wrap_content"
         android:text="Attractions"
         android:id="@+id/attractionsButton"
-        android:layout_alignParentStart="true"
         android:backgroundTint="@android:color/darker_gray"
         android:layout_below="@+id/categoryText"
-        android:layout_centerHorizontal="true"/>
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="fill_parent"

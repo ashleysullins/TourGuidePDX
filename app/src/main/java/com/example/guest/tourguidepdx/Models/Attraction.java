@@ -17,6 +17,7 @@ public class Attraction {
         mImage = image;
         mDescription = description;
 
+
     }
 
     public String getName() {
