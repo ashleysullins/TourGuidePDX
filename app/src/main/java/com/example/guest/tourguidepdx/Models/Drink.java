@@ -48,7 +48,6 @@ public class Drink extends ParseObject{
         return mDrinks;
     }
 
-
     public static void findAllDrinks(final Activity context, final Runnable runnable) {
         ParseQuery<Drink> query = ParseQuery.getQuery(Drink.class);
         query.findInBackground(new FindCallback<Drink>() {
@@ -60,4 +59,23 @@ public class Drink extends ParseObject{
         });
     }
 
+    public Drink nextDrink (Drink drink) {
+        int index = mDrinks.indexOf(drink);
+        if (index == mDrinks.size() - 1 ) {
+            return mDrinks.get(0);
+        } else {
+            return mDrinks.get(index + 1 );
+        }
+    }
+
+    public Drink previousDrink (Drink drink) {
+        int index = mDrinks.indexOf(drink);
+        if (index == mDrinks.size() - 1 ) {
+            return mDrinks.get(0);
+        } else if (index == 0) {
+            return mDrinks.get(mDrinks.size() - 1);
+        } else {
+            return mDrinks.get(index - 1 );
+        }
+    }
 }

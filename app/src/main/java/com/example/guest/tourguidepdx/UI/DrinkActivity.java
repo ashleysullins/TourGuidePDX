@@ -47,7 +47,6 @@ public class DrinkActivity extends AppCompatActivity {
             }
         });
 
-
     }
 
     private void setLayoutContent() {
@@ -55,6 +54,5 @@ public class DrinkActivity extends AppCompatActivity {
         mDrinkAddress.setText(mDrink.getAddress());
         mDrinkDescription.setText(mDrink.getInfo());
     }
-
 
 }
