@@ -38,10 +38,15 @@ public class DrinkActivity extends AppCompatActivity {
         setContentView(R.layout.activity_drink);
         ButterKnife.bind(this);
 
-        mAllDrinks = Drink.getDrinks();
+        Drink.findAllDrinks(DrinkActivity.this, new Runnable() {
+            @Override
+            public void run() {
+                List<Drink> mAllDrinks = Drink.getDrinks();
+                mDrink = mAllDrinks.get(0);
+                setLayoutContent();
+            }
+        });
 
-        mDrink = mAllDrinks.get(0);
-        setLayoutContent();
 
     }
 
