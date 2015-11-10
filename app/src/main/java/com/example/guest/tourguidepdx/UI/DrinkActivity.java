@@ -32,6 +32,7 @@ public class DrinkActivity extends AppCompatActivity {
 
     float x1, x2;
     float y1, y2;
+    float diffx, diffy;
 
     @Bind(R.id.drinkName) TextView mDrinkName;
     @Bind(R.id.drinkAddress) TextView mDrinkAddress;
@@ -76,12 +77,14 @@ public class DrinkActivity extends AppCompatActivity {
             case MotionEvent.ACTION_UP: {
                 x2 = touchevent.getX();
                 y2 = touchevent.getY();
+                diffx = x2-x1;
+                diffy = y2-y1;
             }
-            if (x1 < x2) {
+            if (x1 < x2 && Math.abs(diffy) < Math.abs(diffx)) {
                         mDrink = Drink.nextDrink(mDrink);
                         setLayoutContent();
             }
-            if (x1 > x2) {
+            if (x1 > x2 && Math.abs(diffy) < Math.abs(diffx)) {
                         mDrink = Drink.previousDrink(mDrink);
                         setLayoutContent();
             }

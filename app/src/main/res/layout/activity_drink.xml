@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Drink"
+        android:text="Loading..."
         android:id="@+id/drinkName"
         android:layout_marginTop="28dp"
         android:layout_alignParentTop="true"
@@ -25,7 +25,7 @@
         android:layout_height="200dp"
         android:id="@+id/drinkImage"
         android:layout_marginTop="20dp"
-        android:src="@drawable/powells"
+        android:src="@mipmap/ic_launcher"
         android:layout_below="@+id/drinkName"
         android:layout_centerHorizontal="true"/>
 
@@ -33,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Address"
+        android:text="..."
         android:id="@+id/drinkAddress"
         android:layout_below="@+id/drinkImage"
         android:layout_alignParentLeft="true"
@@ -48,14 +48,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Description"
+        android:text="..."
         android:id="@+id/drinkDescription"
         android:layout_below="@+id/drinkAddress"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="30dp"
         android:paddingLeft="15dp"
-        android:paddingRight="15dp"/>
+        android:paddingRight="15dp"
+        android:layout_marginBottom="40dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -63,8 +64,9 @@
         android:text="Swipe for more"
         android:id="@+id/GestureEvent"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/drinkImage"
-        android:layout_alignEnd="@+id/drinkImage"/>
+        android:layout_marginBottom="15dp"
+        android:layout_alignParentRight="true"
+        android:textSize="12dp" />
 
 </RelativeLayout>
 
