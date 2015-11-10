@@ -25,6 +25,9 @@ import butterknife.ButterKnife;
 
 public class AttractionListActivity extends AppCompatActivity {
 
+    float x1, x2;
+    float y1, y2;
+
     @Bind(R.id.attractionName) TextView mName;
     @Bind(R.id.attractionAddress) TextView mAddress;
     @Bind(R.id.attractionImage) ImageView mImage;
@@ -67,37 +70,29 @@ public class AttractionListActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        // TODO Auto-generated method stub
-        return gestureDetector.onTouchEvent(event);
-    }
-
-    GestureDetector.SimpleOnGestureListener simpleOnGestureListener
-            = new GestureDetector.SimpleOnGestureListener(){
-
-
-        @Override
-        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
-                               float velocityY) {
-            String swipe = "";
-            float sensitvity = 50;
-
-            if((e1.getX() - e2.getX()) > sensitvity) {
+    public boolean onTouchEvent(MotionEvent touchevent) {
+        switch (touchevent.getAction()) {
+            case MotionEvent.ACTION_DOWN: {
+                x1 = touchevent.getX();
+                y1 = touchevent.getY();
+                break;
+            }
+            case MotionEvent.ACTION_UP: {
+                x2 = touchevent.getX();
+                y2 = touchevent.getY();
+            }
+            if (x1 < x2) {
                 mAttraction = mAttractionLib.nextAttraction(mAttraction);
                 setLayoutContent();
-            }else if((e2.getX() - e1.getX()) > sensitvity){
-                    mAttraction = mAttractionLib.previousAttraction(mAttraction);
-                    setLayoutContent();
-            }else{
-                return false;
             }
-            return super.onFling(e1, e2, velocityX, velocityY);
+            if (x1 > x2) {
+                mAttraction = mAttractionLib.previousAttraction(mAttraction);
+                setLayoutContent();
+            }
+            break;
         }
-    };
-
-    GestureDetector gestureDetector
-            = new GestureDetector(simpleOnGestureListener);
+        return false;
+    }
 
     private void setLayoutContent() {
         mName.setText(mAttraction.getName());

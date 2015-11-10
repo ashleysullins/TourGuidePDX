@@ -59,7 +59,7 @@ public class Drink extends ParseObject{
         });
     }
 
-    public Drink nextDrink (Drink drink) {
+    public static Drink nextDrink (Drink drink) {
         int index = mDrinks.indexOf(drink);
         if (index == mDrinks.size() - 1 ) {
             return mDrinks.get(0);
@@ -68,7 +68,7 @@ public class Drink extends ParseObject{
         }
     }
 
-    public Drink previousDrink (Drink drink) {
+    public static Drink previousDrink (Drink drink) {
         int index = mDrinks.indexOf(drink);
         if (index == mDrinks.size() - 1 ) {
             return mDrinks.get(0);

@@ -5,10 +5,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.guest.tourguidepdx.Models.Attraction;
 import com.example.guest.tourguidepdx.Models.Drink;
 import com.example.guest.tourguidepdx.R;
 import com.parse.FindCallback;
@@ -23,6 +25,9 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class DrinkActivity extends AppCompatActivity {
+
+    float x1, x2;
+    float y1, y2;
 
     @Bind(R.id.drinkName) TextView mDrinkName;
     @Bind(R.id.drinkAddress) TextView mDrinkAddress;
@@ -41,7 +46,7 @@ public class DrinkActivity extends AppCompatActivity {
         Drink.findAllDrinks(DrinkActivity.this, new Runnable() {
             @Override
             public void run() {
-                List<Drink> mAllDrinks = Drink.getDrinks();
+                mAllDrinks = Drink.getDrinks();
                 mDrink = mAllDrinks.get(0);
                 setLayoutContent();
             }
@@ -49,7 +54,32 @@ public class DrinkActivity extends AppCompatActivity {
 
     }
 
-    private void setLayoutContent() {
+    public boolean onTouchEvent(MotionEvent touchevent) {
+        switch (touchevent.getAction()) {
+            case MotionEvent.ACTION_DOWN: {
+                x1 = touchevent.getX();
+                y1 = touchevent.getY();
+                break;
+            }
+            case MotionEvent.ACTION_UP: {
+                x2 = touchevent.getX();
+                y2 = touchevent.getY();
+            }
+            if (x1 < x2) {
+                        mDrink = Drink.nextDrink(mDrink);
+                        setLayoutContent();
+            }
+            if (x1 > x2) {
+                        mDrink = Drink.previousDrink(mDrink);
+                        setLayoutContent();
+            }
+            break;
+        }
+        return false;
+    }
+
+
+    private void setLayoutContent(){
         mDrinkName.setText(mDrink.getPlace());
         mDrinkAddress.setText(mDrink.getAddress());
         mDrinkDescription.setText(mDrink.getInfo());
