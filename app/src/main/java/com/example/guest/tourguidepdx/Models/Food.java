@@ -23,7 +23,6 @@ public class Food extends Model {
     @Column(name = "Website")
     private String mWebsite;
 
-
     @Column(name =  "Description")
     private String mDescription;
 
