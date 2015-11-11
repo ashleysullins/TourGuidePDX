@@ -81,11 +81,11 @@ public class DrinkActivity extends AppCompatActivity {
                 diffy = y2-y1;
             }
             if (x1 < x2 && Math.abs(diffy) < Math.abs(diffx)) {
-                        mDrink = Drink.nextDrink(mDrink);
+                        mDrink = Drink.previousDrink(mDrink);
                         setLayoutContent();
             }
             if (x1 > x2 && Math.abs(diffy) < Math.abs(diffx)) {
-                        mDrink = Drink.previousDrink(mDrink);
+                        mDrink = Drink.nextDrink(mDrink);
                         setLayoutContent();
             }
             break;

@@ -82,11 +82,11 @@ public class AttractionListActivity extends AppCompatActivity {
                 y2 = touchevent.getY();
             }
             if (x1 < x2) {
-                mAttraction = mAttractionLib.nextAttraction(mAttraction);
+                mAttraction = mAttractionLib.previousAttraction(mAttraction);
                 setLayoutContent();
             }
             if (x1 > x2) {
-                mAttraction = mAttractionLib.previousAttraction(mAttraction);
+                mAttraction = mAttractionLib.nextAttraction(mAttraction);
                 setLayoutContent();
             }
             break;
