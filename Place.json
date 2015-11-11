@@ -1,0 +1,92 @@
+{ "results": [
+	{
+        "address": "5736 N.E. 33rd Ave.",
+				"type": "drink",
+        "image": "http://www.mcmenamins.com/system/uploads/assets/Section%20Carousels/_v/KennedySchoolTheaterKS-theaterIMG-9055.jpg/header.jpg",
+        "info": "School turned into huge party name",
+        "more_info": "Bars, resturants, movies, pools, and brewery.. in a school",
+        "name": "Kennedy School",
+        "website": "http://www.mcmenamins.com/KennedySchool"
+    },
+	{
+        "address": "32 NW 5th Ave, Portland",
+				"type": "drink",
+        "image": "http://cdn2-b.examiner.com/sites/default/files/styles/image_content_width/hash/47/00/4700624ce515a9600d0d0ea8776d41a3.jpg?itok=kd6-6-xq",
+        "info": "Awesome happy hour. Great margaritas and bowls.",
+        "more_info": "",
+        "name": "Mi Mero Mole",
+        "website": "http://mmmtacospdx.com/"
+    },
+	{
+        "address": "1218 N Killingsworth St",
+				"type": "drink",
+        "image": "http://s3-media1.fl.yelpcdn.com/bphoto/UKeaCBEqQW3inzqwt0x_cw/348s.jpg",
+        "info": "Dr. Who Bar",
+        "more_info": "Mostly just decorations but kind of fun to check out. Drinks and food are overpriced.",
+        "name": "The tardis Bar",
+        "website": "http://lardosandwiches.com/assets/content/lardo_pdfs/10-24-15_MENU.pdf"
+    },
+	{
+        "address": "1223 SE Powell Blvd",
+				"type": "drink",
+        "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRK0emjXMNp6MJTKlsJQXjFL8N6xWtjYJQHZIH9oAlsoKd0gPvZhQ",
+        "info": "Portland’s Only 24 Hour Coffee House",
+        "more_info": "Southeast Grind is a locally owned and operated café in the heart of SE Portland. We offer local and healthy drinks and snacks in a bright little shop. We believe in promoting what makes Portland such a stellar name by featuring local artists, choosing local vendors and honoring all things eclectic and fun.",
+        "name": "Southeast Grind",
+        "website": "http://southeastgrind.com/menu/"
+    },
+	{
+        "address": "1332 W. Burnside",
+				"type": "drink",
+        "image": "http://www.mcmenamins.com/system/uploads/assets/Big%20Properties/Crystal/Ballroom/_v/_MG_8687.jpg/header.jpg",
+        "info": "Cool looking bar near SW",
+        "more_info": "",
+      	"name": "Crystal Ballroom",
+        "website": "http://www.mcmenamins.com/425-crystal-ballroom-home"
+    },
+	{
+        "address": "211 SW Ankeny St",
+				"type": "drink",
+        "image": "https://c2.staticflickr.com/4/3585/3611977943_a72bd61577.jpg",
+        "info": "Dive bar. Food and pinball. What more could you ask for?",
+        "more_info": "",
+        "name": "Shanghai Tunnel",
+        "website": "http://www.yelp.com/biz/shanghai-tunnel-portland"
+    },
+	{
+        "address": "NW",
+				"type": "attraction",
+        "image": "R.drawable.powells",
+        "info": "The largest bookstore in the world (maybe).",
+        "more_info": "",
+        "name": "Powell's City of Books",
+        "website": "http://www.powells.com/"
+    },
+	{
+        "address": "Chinatown",
+				"type": "attraction",
+        "image": "R.drawable.lansu",
+        "info": "Chinese garden in SW portland. The only attraction in Chinatown.",
+        "more_info": "",
+        "name": "Lan Su Chinese Garden",
+        "website": "http://www.lansugarden.org/"
+    },
+	{
+        "address": "Take the Red Line until you get there",
+				"type": "attraction",
+        "image": "R.drawable.washington",
+        "info": "Includes the Zoo, Japanese Garden, Rose garden, Hoyt Arboretum",
+        "more_info": "",
+        "name": "Washington Park",
+        "website": "http://washingtonparkpdx.org/"
+    },
+	{
+        "address": "8840 NE Skidmore Street",
+				"type": "attraction",
+        "image": "R.drawable.grotto",
+        "info": "Catholic botanical garden. Christmas Festival of Lights. Friday after Thanksgiving thru December 30.",
+        "more_info": "",
+        "name": "The Grotto",
+        "website": "http://thegrotto.org/"
+    }
+] }

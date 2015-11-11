@@ -42,7 +42,8 @@ public class LetsGoActivity extends AppCompatActivity {
         mFoodButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LetsGoActivity.this, CuisineActivity.class);
+                Intent intent = new Intent(LetsGoActivity.this, PlaceActivity.class);
+                intent.putExtra("type", "food");
                 startActivity(intent);
             }
         });
@@ -50,7 +51,8 @@ public class LetsGoActivity extends AppCompatActivity {
         mDrinkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LetsGoActivity.this, DrinkActivity.class);
+                Intent intent = new Intent(LetsGoActivity.this, PlaceActivity.class);
+                intent.putExtra("type", "drink");
                 startActivity(intent);
             }
         });
@@ -58,7 +60,8 @@ public class LetsGoActivity extends AppCompatActivity {
         mAttractionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LetsGoActivity.this, AttractionListActivity.class);
+                Intent intent = new Intent(LetsGoActivity.this, PlaceActivity.class);
+                intent.putExtra("type", "attraction");
                 startActivity(intent);
             }
         });

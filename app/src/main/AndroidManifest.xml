@@ -6,7 +6,6 @@
 
     <application
         android:name="TourApplication"
-        android:debuggable="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -29,23 +28,7 @@
                 android:value=".UI.MainActivity" />
         </activity>
         <activity
-            android:name=".UI.FoodActivity"
-            android:label="@string/title_activity_food"
-            android:parentActivityName=".UI.LetsGoActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".UI.LetsGoActivity" />
-        </activity>
-        <activity
-            android:name=".UI.DrinkActivity"
-            android:label="@string/title_activity_drink"
-            android:parentActivityName=".UI.LetsGoActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".UI.LetsGoActivity" />
-        </activity>
-        <activity
-            android:name=".UI.AttractionListActivity"
+            android:name=".UI.PlaceActivity"
             android:label="@string/title_activity_attractions"
             android:parentActivityName=".UI.LetsGoActivity" >
             <meta-data
@@ -60,22 +43,6 @@
             android:name="AA_DB_VERSION"
             android:value="1" />
 
-        <activity
-            android:name=".UI.AddFoodActivity"
-            android:label="@string/title_activity_add_food"
-            android:parentActivityName=".UI.FoodActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.guest.tourguidepdx.UI.FoodActivity" />
-        </activity>
-        <activity
-            android:name=".UI.CuisineActivity"
-            android:label="@string/title_activity_food_type"
-            android:parentActivityName=".UI.LetsGoActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.guest.tourguidepdx.UI.LetsGoActivity" />
-        </activity>
     </application>
 
 </manifest>

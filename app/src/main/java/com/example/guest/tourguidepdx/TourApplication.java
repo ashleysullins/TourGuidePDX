@@ -2,7 +2,7 @@ package com.example.guest.tourguidepdx;
 
 import android.app.Application;
 
-import com.example.guest.tourguidepdx.Models.Drink;
+import com.example.guest.tourguidepdx.Models.Place;
 import com.parse.Parse;
 import com.parse.ParseObject;
 
@@ -15,7 +15,7 @@ public class TourApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        ParseObject.registerSubclass(Drink.class);
+        ParseObject.registerSubclass(Place.class);
 
         // Enable Local Datastore.
         Parse.enableLocalDatastore(this);
