@@ -62,12 +62,6 @@ public class Place extends ParseObject {
                     Intent intent = new Intent(context, ErrorActivity.class);
                     context.startActivity(intent);
                 }
-                ParseObject.unpinAllInBackground("type", new DeleteCallback() {
-                    @Override
-                    public void done(ParseException e) {
-                        ParseObject.pinAllInBackground("type", mPlace);
-                    }
-                });
             }
         });
     }
@@ -90,4 +84,7 @@ public class Place extends ParseObject {
         }
     }
 
+    public String getPhone() {
+        return getString("phone");
+    }
 }

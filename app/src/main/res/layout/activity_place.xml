@@ -71,27 +71,27 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton"
+        android:id="@+id/mapButton"
         android:src="@mipmap/ic_action_location"
-        android:layout_alignTop="@+id/imageButton2"
-        android:layout_toLeftOf="@+id/imageButton3"
-        android:layout_toStartOf="@+id/imageButton3"/>
+        android:layout_alignTop="@+id/searchButton"
+        android:layout_toLeftOf="@+id/phoneButton"
+        android:layout_toStartOf="@+id/phoneButton"/>
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton2"
+        android:id="@+id/searchButton"
         android:src="@mipmap/ic_action_search"
         android:layout_alignTop="@+id/placeAddress"
-        android:layout_toLeftOf="@+id/imageButton"
-        android:layout_toStartOf="@+id/imageButton"/>
+        android:layout_toLeftOf="@+id/mapButton"
+        android:layout_toStartOf="@+id/mapButton"/>
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton3"
+        android:id="@+id/phoneButton"
         android:src="@mipmap/ic_action_phone_start"
-        android:layout_alignTop="@+id/imageButton"
+        android:layout_alignTop="@+id/mapButton"
         android:layout_toRightOf="@+id/placeImage"
         android:layout_toEndOf="@+id/placeImage"/>
 

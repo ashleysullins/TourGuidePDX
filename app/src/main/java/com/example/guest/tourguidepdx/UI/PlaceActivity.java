@@ -2,11 +2,13 @@ package com.example.guest.tourguidepdx.UI;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.media.Image;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,6 +17,7 @@ import com.example.guest.tourguidepdx.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
+import java.util.Locale;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -28,6 +31,10 @@ public class PlaceActivity extends AppCompatActivity {
     @Bind(R.id.placeAddress) TextView mAddress;
     @Bind(R.id.placeImage) ImageView mImage;
     @Bind(R.id.placeDescription) TextView mDescription;
+    @Bind(R.id.mapButton) ImageButton mMapButton;
+    @Bind(R.id.searchButton) ImageButton mSearchButton;
+    @Bind(R.id.phoneButton) ImageButton mPhoneButton;
+
 
     private Place mPlace;
     private List<Place> mAllPlaces;
@@ -62,10 +69,29 @@ public class PlaceActivity extends AppCompatActivity {
             }
         });
 
-        mImage.setOnClickListener(new View.OnClickListener() {
+        mSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(mPlace.getWebsite()));
+                startActivity(intent);
+            }
+        });
+
+        mMapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String uri = String.format(Locale.ENGLISH, "geo:0,0?q=" + mPlace.getAddress());
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
+                startActivity(intent);
+            }
+        });
+
+        mPhoneButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel: " + mPlace.getPhone()));
                 startActivity(intent);
             }
         });
