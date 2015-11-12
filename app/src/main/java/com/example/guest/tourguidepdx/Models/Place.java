@@ -1,7 +1,10 @@
 package com.example.guest.tourguidepdx.Models;
 
 import android.app.Activity;
+import android.content.Intent;
 
+import com.example.guest.tourguidepdx.UI.ErrorActivity;
+import com.parse.DeleteCallback;
 import com.parse.FindCallback;
 import com.parse.ParseClassName;
 import com.parse.ParseException;
@@ -52,8 +55,19 @@ public class Place extends ParseObject {
         query.findInBackground(new FindCallback<Place>() {
             @Override
             public void done(List<Place> places, ParseException e) {
-                mPlace = places;
-                context.runOnUiThread(runnable);
+                if (e == null) {
+                    mPlace = places;
+                    context.runOnUiThread(runnable);
+                } else {
+                    Intent intent = new Intent(context, ErrorActivity.class);
+                    context.startActivity(intent);
+                }
+                ParseObject.unpinAllInBackground("type", new DeleteCallback() {
+                    @Override
+                    public void done(ParseException e) {
+                        ParseObject.pinAllInBackground("type", mPlace);
+                    }
+                });
             }
         });
     }
