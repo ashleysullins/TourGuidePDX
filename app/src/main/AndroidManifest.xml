@@ -12,6 +12,7 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".UI.MainActivity"
+            android:screenOrientation="portrait"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +22,7 @@
         </activity>
         <activity
             android:name=".UI.LetsGoActivity"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_lets_go"
             android:parentActivityName=".UI.MainActivity" >
             <meta-data
@@ -29,6 +31,7 @@
         </activity>
         <activity
             android:name=".UI.PlaceActivity"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_attractions"
             android:parentActivityName=".UI.LetsGoActivity" >
             <meta-data
@@ -37,6 +40,7 @@
         </activity>
         <activity
             android:name=".UI.ErrorActivity"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_attractions"
             android:parentActivityName=".UI.LetsGoActivity" >
             <meta-data

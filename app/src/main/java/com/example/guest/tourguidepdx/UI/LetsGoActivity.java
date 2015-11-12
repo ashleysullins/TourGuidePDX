@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.guest.tourguidepdx.R;
@@ -15,9 +16,9 @@ import butterknife.ButterKnife;
 
 public class LetsGoActivity extends AppCompatActivity {
 
-    @Bind(R.id.foodButton) Button mFoodButton;
-    @Bind(R.id.drinkButton) Button mDrinkButton;
-    @Bind(R.id.attractionsButton) Button mAttractionButton;
+    @Bind(R.id.foodButton) ImageButton mFoodButton;
+    @Bind(R.id.drinkButton) ImageButton mDrinkButton;
+    @Bind(R.id.attractionsButton) ImageButton mAttractionButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
