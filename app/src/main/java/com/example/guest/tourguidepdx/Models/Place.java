@@ -1,10 +1,7 @@
 package com.example.guest.tourguidepdx.Models;
 
 import android.app.Activity;
-import android.content.Intent;
 
-import com.example.guest.tourguidepdx.UI.ErrorActivity;
-import com.parse.DeleteCallback;
 import com.parse.FindCallback;
 import com.parse.ParseClassName;
 import com.parse.ParseException;
@@ -59,8 +56,7 @@ public class Place extends ParseObject {
                     mPlace = places;
                     context.runOnUiThread(runnable);
                 } else {
-                    Intent intent = new Intent(context, ErrorActivity.class);
-                    context.startActivity(intent);
+                    //error message goes here
                 }
             }
         });

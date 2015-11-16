@@ -39,15 +39,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".UI.LetsGoActivity" />
         </activity>
-        <activity
-            android:name=".UI.ErrorActivity"
-            android:screenOrientation="portrait"
-            android:label="@string/title_activity_attractions"
-            android:parentActivityName=".UI.LetsGoActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".UI.LetsGoActivity" />
-        </activity>
 
         <meta-data
             android:name="AA_DB_NAME"

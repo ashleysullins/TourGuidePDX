@@ -34,6 +34,7 @@ public class PlaceActivity extends AppCompatActivity {
     @Bind(R.id.mapButton) ImageButton mMapButton;
     @Bind(R.id.searchButton) ImageButton mSearchButton;
     @Bind(R.id.phoneButton) ImageButton mPhoneButton;
+    @Bind(R.id.reloadButton) ImageButton mReloadButton;
 
 
     private Place mPlace;
@@ -58,16 +59,9 @@ public class PlaceActivity extends AppCompatActivity {
         // Applying font
         txtattractionName.setTypeface(tf);
 
-        String type = getIntent().getStringExtra("type");
+        final String type = getIntent().getStringExtra("type");
 
-        Place.findAllPlaces(type, PlaceActivity.this, new Runnable() {
-            @Override
-            public void run() {
-                mAllPlaces = Place.getPlace();
-                mPlace = mAllPlaces.get(0);
-                setLayoutContent();
-            }
-        });
+        showPlaces(type);
 
         mSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +90,29 @@ public class PlaceActivity extends AppCompatActivity {
             }
         });
 
+        mReloadButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showPlaces(type);
+            }
+        });
+
+    }
+
+    private void showPlaces(String type) {
+        Place.findAllPlaces(type, PlaceActivity.this, new Runnable() {
+            @Override
+            public void run() {
+                    mAllPlaces = Place.getPlace();
+                    mPlace = mAllPlaces.get(0);
+                    if (mPlace == null) {
+                    errorHandling();
+                } else {
+                    setLayoutContent();
+                    mReloadButton.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
     }
 
     public boolean onTouchEvent(MotionEvent touchevent) {
@@ -110,16 +127,34 @@ public class PlaceActivity extends AppCompatActivity {
                 y2 = touchevent.getY();
             }
             if (x1 < x2) {
-                mPlace = Place.previousPlace(mPlace, mAllPlaces);
-                setLayoutContent();
+                try {
+                    mPlace = Place.previousPlace(mPlace, mAllPlaces);
+                }
+                catch (NullPointerException e) {
+                    errorHandling();
+                }  if (mPlace != null) {
+                    setLayoutContent();
+                }
             }
             if (x1 > x2) {
-                mPlace = Place.nextPlace(mPlace, mAllPlaces);
-                setLayoutContent();
+                try {
+                    mPlace = Place.nextPlace(mPlace, mAllPlaces);
+                }
+                catch (NullPointerException e) {
+                    errorHandling();
+                }
+                if (mPlace != null) {
+                    setLayoutContent();
+                }
             }
             break;
         }
         return false;
+    }
+
+    private void errorHandling() {
+        mReloadButton.setVisibility(View.VISIBLE);
+        mName.setText("Error!");
     }
 
     private void setLayoutContent() {

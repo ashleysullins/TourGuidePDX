@@ -36,6 +36,15 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/phoneButton"
+        android:src="@mipmap/ic_action_phone_start"
+        android:layout_alignTop="@+id/searchButton"
+        android:layout_toLeftOf="@+id/searchButton"
+        android:layout_toStartOf="@+id/searchButton" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/mapButton"
         android:src="@mipmap/ic_action_location"
         android:layout_alignTop="@+id/placeAddress"
@@ -53,7 +62,7 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="50dp"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="..."
         android:id="@+id/placeDescription"
@@ -90,10 +99,10 @@
         android:id="@+id/placeName"
         android:textSize="30dp"
         android:gravity="center_horizontal"
+        android:layout_marginTop="30dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="20dp" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
 
     <ImageView
         android:layout_width="200dp"
@@ -107,11 +116,12 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/phoneButton"
-        android:src="@mipmap/ic_action_phone_start"
-        android:layout_alignTop="@+id/searchButton"
-        android:layout_toLeftOf="@+id/searchButton"
-        android:layout_toStartOf="@+id/searchButton" />
+        android:id="@+id/reloadButton"
+        android:src="@mipmap/ic_action_reload"
+        android:layout_alignBottom="@+id/placeImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="67dp"
+        android:background="@android:color/transparent"/>
 
 </RelativeLayout>
 
