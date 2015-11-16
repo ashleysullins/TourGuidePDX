@@ -2,9 +2,12 @@ package com.example.guest.tourguidepdx.Models;
 
 import android.app.Activity;
 
+import com.example.guest.tourguidepdx.UI.PlaceActivity;
 import com.parse.FindCallback;
+import com.parse.Parse;
 import com.parse.ParseClassName;
 import com.parse.ParseException;
+import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
@@ -46,8 +49,9 @@ public class Place extends ParseObject {
         return mPlace;
     }
 
-    public static void findAllPlaces(String type, final Activity context, final Runnable runnable) {
-        ParseQuery<Place> query = ParseQuery.getQuery(Place.class);
+    public static void findAllPlaces(String type, ParseGeoPoint point, final Activity context, final Runnable runnable) {
+       ParseQuery<Place> query = ParseQuery.getQuery(Place.class);
+        query.whereNear("Location", point);
         query.whereEqualTo("type", type);
         query.findInBackground(new FindCallback<Place>() {
             @Override
@@ -56,7 +60,7 @@ public class Place extends ParseObject {
                     mPlace = places;
                     context.runOnUiThread(runnable);
                 } else {
-                    //error message goes here
+                    //TODO: Add error handling in model
                 }
             }
         });

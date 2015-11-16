@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.example.guest.tourguidepdx.Models.Place;
 import com.example.guest.tourguidepdx.R;
+import com.parse.ParseGeoPoint;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -60,8 +61,9 @@ public class PlaceActivity extends AppCompatActivity {
         txtattractionName.setTypeface(tf);
 
         final String type = getIntent().getStringExtra("type");
+        final ParseGeoPoint point = new ParseGeoPoint(45.52, -122.67);
 
-        showPlaces(type);
+        showPlaces(type, point);
 
         mSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,18 +95,22 @@ public class PlaceActivity extends AppCompatActivity {
         mReloadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showPlaces(type);
+                showPlaces(type, point);
             }
         });
 
     }
 
-    private void showPlaces(String type) {
-        Place.findAllPlaces(type, PlaceActivity.this, new Runnable() {
+    private void showPlaces(String type, ParseGeoPoint point) {
+        Place.findAllPlaces(type, point, PlaceActivity.this, new Runnable() {
             @Override
             public void run() {
+                try {
                     mAllPlaces = Place.getPlace();
                     mPlace = mAllPlaces.get(0);
+                } catch (Exception e) {
+                    errorHandling();
+                }
                     if (mPlace == null) {
                     errorHandling();
                 } else {
