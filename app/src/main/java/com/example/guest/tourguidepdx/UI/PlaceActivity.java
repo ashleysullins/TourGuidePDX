@@ -1,8 +1,10 @@
 package com.example.guest.tourguidepdx.UI;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.media.Image;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,6 +24,7 @@ import java.util.Locale;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import im.delight.android.location.SimpleLocation;
 
 public class PlaceActivity extends AppCompatActivity {
 
@@ -37,10 +40,11 @@ public class PlaceActivity extends AppCompatActivity {
     @Bind(R.id.phoneButton) ImageButton mPhoneButton;
     @Bind(R.id.reloadButton) ImageButton mReloadButton;
 
-
     private Place mPlace;
     private List<Place> mAllPlaces;
-
+    private SimpleLocation mLocation;
+    private double getLat;
+    private double getLong;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,20 +52,45 @@ public class PlaceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_place);
         ButterKnife.bind(this);
 
-        // Font path
+        // Activate custom font for name of place
         String fontPath = "fonts/Pacifico.ttf";
-
-        // text view label
         TextView txtattractionName= (TextView) findViewById(R.id.placeName);
-
-        // Loading Font Face
         Typeface tf = Typeface.createFromAsset(getAssets(), fontPath);
-
-        // Applying font
         txtattractionName.setTypeface(tf);
 
+        mLocation = new SimpleLocation(this);
+        if (!mLocation.hasLocationEnabled()) {
+            AlertDialog.Builder builder= new AlertDialog.Builder(this);
+            builder.setMessage("To see places near you, this app will need to know your location.")
+                    .setTitle("Geolocation Settings")
+                    .setPositiveButton("Allow", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            SimpleLocation.openSettings(PlaceActivity.this);
+                        }
+                    })
+                    .setNegativeButton("Cancel", null)
+                    .create();
+            builder.show();
+        }
+
+        if (mLocation.getLatitude() == 0) {
+            getLat = 45.520705;
+        } else {
+            getLat = mLocation.getLatitude();
+        }
+
+        if (mLocation.getLongitude() == 0) {
+             getLong = -122.677397;
+        } else {
+             getLong = mLocation.getLongitude();
+        }
+
+        final double latitude = getLat;
+        final double longitude = getLong;
+
         final String type = getIntent().getStringExtra("type");
-        final ParseGeoPoint point = new ParseGeoPoint(45.52, -122.67);
+        final ParseGeoPoint point = new ParseGeoPoint(latitude, longitude);
 
         showPlaces(type, point);
 
@@ -169,5 +198,6 @@ public class PlaceActivity extends AppCompatActivity {
         Picasso.with(this).load(mPlace.getImage()).into(mImage);
         mDescription.setText(mPlace.getInfo());
     }
+
 
 }

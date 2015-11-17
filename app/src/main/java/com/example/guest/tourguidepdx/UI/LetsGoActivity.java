@@ -14,6 +14,7 @@ import com.example.guest.tourguidepdx.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import im.delight.android.location.SimpleLocation;
 
 public class LetsGoActivity extends AppCompatActivity {
 
