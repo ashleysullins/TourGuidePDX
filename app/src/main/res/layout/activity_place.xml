@@ -12,26 +12,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Swipe for more"
+        android:text="@string/swipe"
         android:id="@+id/GestureEvent"
         android:textSize="12dp"
-        android:layout_below="@+id/placeDescription"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/scrollView2"
+        android:layout_alignRight="@+id/scrollView2"
+        android:layout_alignEnd="@+id/scrollView2"
         android:layout_marginTop="5dp" />
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/scrollView2"
-        android:layout_alignParentTop="true"
-        android:layout_toStartOf="@+id/searchButton"
-        android:layout_alignRight="@+id/GestureEvent"
-        android:layout_alignEnd="@+id/GestureEvent"
-        android:layout_alignBottom="@+id/placeDescription"
-        android:layout_marginTop="20dp">
-
-    </ScrollView>
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -61,19 +48,6 @@
         android:layout_toStartOf="@+id/mapButton"/>
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="..."
-        android:id="@+id/placeDescription"
-        android:layout_below="@+id/placeAddress"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="30dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -87,7 +61,7 @@
         android:textColor="@android:color/darker_gray"
         android:textSize="20dp"
         android:layout_alignParentTop="false"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="20dp"
         android:layout_toLeftOf="@+id/phoneButton"
         android:layout_toStartOf="@+id/phoneButton" />
 
@@ -97,7 +71,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Loading..."
         android:id="@+id/placeName"
-        android:textSize="30dp"
+        android:textSize="25dp"
         android:gravity="center_horizontal"
         android:layout_marginTop="5dp"
         android:layout_alignParentTop="true"
@@ -108,7 +82,7 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:id="@+id/placeImage"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:src="@mipmap/ic_launcher"
         android:layout_below="@+id/placeName"
         android:layout_centerHorizontal="true"/>
@@ -122,6 +96,29 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="67dp"
         android:background="@android:color/transparent"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:id="@+id/scrollView2"
+        android:layout_below="@+id/phoneButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="..."
+            android:id="@+id/placeDescription"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </ScrollView>
+
 
 </RelativeLayout>
 

@@ -10,4 +10,5 @@
         - Download the PDXPipeline app for information on events that will be happening during your trip! \n
     </string>
     <string name="title_activity_attractions">Places</string>
+    <string name="swipe">Swipe for more</string>
 </resources>
