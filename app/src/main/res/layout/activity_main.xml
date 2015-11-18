@@ -17,11 +17,10 @@
         android:text="Tour Guide PDX"
         android:id="@+id/titleText"
         android:gravity="center_vertical|center_horizontal"
-        android:background="@android:color/holo_blue_bright"
+        android:background="#64B5F6"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:backgroundTint="@android:color/holo_blue_dark"
         android:textColor="@android:color/white"
         android:textIsSelectable="true"
         android:textSize="35dp"/>
