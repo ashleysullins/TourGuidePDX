@@ -1,10 +1,10 @@
 # Tour Guide PDX
 
-##### Your guide for all things Portland, 10/30/15
+##### Your guide for all things Portland, 11/20/15
 
 ## Description
 
-New to Portland? Visiting for fun? This application will help you make the most of your time in PDX. Includes: <br><br>
+New to Portland? Visiting for fun? This application will help you make the most of your time in PDX. Includes: <br>
 
 - Helpful tips for getting around town
 - Popular attractions in the area
@@ -20,10 +20,9 @@ Download Android Studio and this repository. Then, with the code open inside of 
 
 - Android Studio
 - Java
+- Parse database
 
 ### Legal
-
-
 
 Copyright (c) 2015 Ashley Sullins
 
