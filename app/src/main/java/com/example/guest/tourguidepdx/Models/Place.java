@@ -19,7 +19,7 @@ import java.util.List;
 @ParseClassName("Place")
 public class Place extends ParseObject {
 
-    public static List<Place> mPlace;
+    public static List<Place> mPlaces;
 
     public Place() {
         super();
@@ -46,21 +46,19 @@ public class Place extends ParseObject {
     }
 
     public static List<Place> getPlace() {
-        return mPlace;
+        return mPlaces;
     }
 
     public static void findAllPlaces(String type, ParseGeoPoint point, final Activity context, final Runnable runnable) {
-       ParseQuery<Place> query = ParseQuery.getQuery(Place.class);
+        ParseQuery<Place> query = ParseQuery.getQuery(Place.class);
         query.whereNear("Location", point);
         query.whereEqualTo("type", type);
         query.findInBackground(new FindCallback<Place>() {
             @Override
             public void done(List<Place> places, ParseException e) {
                 if (e == null) {
-                    mPlace = places;
+                    mPlaces = places;
                     context.runOnUiThread(runnable);
-                } else {
-                    //TODO: Add error handling in model
                 }
             }
         });

@@ -74,13 +74,13 @@ public class PlaceActivity extends AppCompatActivity {
             builder.show();
         }
 
-        if (mLocation.getLatitude() == 0) {
+        if (mLocation.getLatitude() == 0 || mLocation.getLatitude() < 44 || mLocation.getLatitude() > 46) {
             getLat = 45.520705;
         } else {
             getLat = mLocation.getLatitude();
         }
 
-        if (mLocation.getLongitude() == 0) {
+        if (mLocation.getLongitude() == 0 || mLocation.getLongitude() < -121 || mLocation.getLongitude() > -123) {
              getLong = -122.677397;
         } else {
              getLong = mLocation.getLongitude();
@@ -190,6 +190,7 @@ public class PlaceActivity extends AppCompatActivity {
     private void errorHandling() {
         mReloadButton.setVisibility(View.VISIBLE);
         mName.setText("Error!");
+        mDescription.setText("There has been an error. Please press refresh or press back button to go back.");
     }
 
     private void setLayoutContent() {
