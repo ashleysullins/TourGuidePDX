@@ -9,17 +9,6 @@
                 android:background="#FAFAD2"
                 tools:context="com.example.guest.tourguidepdx.UI.PlaceActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/swipe"
-        android:id="@+id/GestureEvent"
-        android:textSize="12dp"
-        android:layout_below="@+id/scrollView2"
-        android:layout_alignRight="@+id/scrollView2"
-        android:layout_alignEnd="@+id/scrollView2"
-        android:layout_marginTop="5dp" />
-
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,8 +24,8 @@
         android:id="@+id/mapButton"
         android:src="@mipmap/ic_action_location"
         android:layout_alignTop="@+id/placeAddress"
-        android:layout_alignRight="@+id/GestureEvent"
-        android:layout_alignEnd="@+id/GestureEvent" />
+        android:layout_alignRight="@+id/scrollView2"
+        android:layout_alignEnd="@+id/scrollView2" />
 
     <ImageButton
         android:layout_width="wrap_content"

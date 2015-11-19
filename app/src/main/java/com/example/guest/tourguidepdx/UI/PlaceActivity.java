@@ -1,15 +1,18 @@
 package com.example.guest.tourguidepdx.UI;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -57,6 +60,8 @@ public class PlaceActivity extends AppCompatActivity {
         TextView txtattractionName= (TextView) findViewById(R.id.placeName);
         Typeface tf = Typeface.createFromAsset(getAssets(), fontPath);
         txtattractionName.setTypeface(tf);
+
+        onCoachMark();
 
         mLocation = new SimpleLocation(this);
         if (!mLocation.hasLocationEnabled()) {
@@ -198,6 +203,24 @@ public class PlaceActivity extends AppCompatActivity {
         mAddress.setText(mPlace.getAddress());
         Picasso.with(this).load(mPlace.getImage()).into(mImage);
         mDescription.setText(mPlace.getInfo());
+    }
+
+    public void onCoachMark(){
+
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        dialog.setContentView(R.layout.coach_mark);
+        dialog.setCanceledOnTouchOutside(true);
+        //for dismissing anywhere you touch
+        View masterView = dialog.findViewById(R.id.coach_mark_master_view);
+        masterView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+        dialog.show();
     }
 
 
