@@ -51,11 +51,15 @@
         "website": "http://www.mcmenamins.com/KennedySchool"
     },
 	{
-        "address": "NW",
+		"Location": {
+				"__type": "GeoPoint",
+				"latitude": 45.523097,
+				"longitude": -122.681325
+		},
+        "address": "1005 W Burnside St",
         "createdAt": "2015-11-11T21:00:21.849Z",
-        "image": "R.drawable.powells",
+        "image": "http://c2.staticflickr.com/4/3873/15115723691_3aaa0c55d6_n.jpg",
         "info": "The largest bookstore in the world (maybe).",
-        "more_info": "",
         "name": "Powell's City of Books",
         "objectId": "CtdrnPDOc7",
         "type": "attraction",
@@ -80,10 +84,15 @@
         "website": "http://southeastgrind.com/menu/"
     },
 	{
-        "address": "Take the Red Line until you get there",
+		"Location": {
+				"__type": "GeoPoint",
+				"latitude": 45.510798,
+				"longitude": -122.735728
+		},
+        "address": "1715 SW Skyline Blvd",
         "createdAt": "2015-11-11T21:00:21.856Z",
-        "image": "R.drawable.washington",
-        "info": "Includes the Zoo, Japanese Garden, Rose garden, Hoyt Arboretum",
+        "image": "http://c2.staticflickr.com/6/5773/22733541249_fd05bf257c_n.jpg",
+        "info": "The rose garden and arboretum are free to visit. The zoo has $4 admission on the first Tuesday of the month.",
         "more_info": "",
         "name": "Washington Park",
         "objectId": "IaTcvxJcg9",
@@ -107,11 +116,16 @@
         "updatedAt": "2015-11-18T18:53:21.135Z",
         "website": "http://thesquarepdx.org/"
     },
-	{
+		{
+			"Location": {
+					"__type": "GeoPoint",
+					"latitude": 45.553207,
+					"longitude": -122.573439
+			},
         "address": "8840 NE Skidmore Street",
         "createdAt": "2015-11-11T21:00:21.859Z",
-        "image": "R.drawable.grotto",
-        "info": "Catholic botanical garden. Christmas Festival of Lights. Friday after Thanksgiving thru December 30.",
+        "image": "http://c1.staticflickr.com/9/8194/8429559823_32031fa3ee_n.jpg",
+        "info": "Catholic botanical garden. Christmas Festival of Lights occurs the Friday after Thanksgiving thru December 30.",
         "more_info": "",
         "name": "The Grotto",
         "objectId": "Nl3nA5Q0ZZ",
@@ -120,12 +134,18 @@
         "website": "http://thegrotto.org/"
     },
 	{
-        "address": "NW",
+		"Location": {
+				"__type": "GeoPoint",
+				"latitude": 45.522064,
+				"longitude": -122.683595
+		},
+        "address": "1205 SW Washington St",
         "createdAt": "2015-11-11T21:25:30.833Z",
-        "info": "Yum Fries!",
+				"image": "http://c2.staticflickr.com/4/3830/9299068134_6524d61408_n.jpg",
+        "info": "Get the dirty fries!",
         "name": "Lardo",
         "objectId": "ZQCFEs828j",
-        "phone": "555555555",
+        "phone": "(503) 241-2490",
         "type": "food",
         "updatedAt": "2015-11-12T23:48:54.161Z",
         "website": ""
@@ -147,11 +167,15 @@
         "website": "http://thefishandchipshop.com/"
     },
 	{
-        "address": "Chinatown",
+		"Location": {
+				"__type": "GeoPoint",
+				"latitude": 45.525433,
+				"longitude": -122.673124
+		},
+        "address": "239 NW Everett St",
         "createdAt": "2015-11-11T21:00:21.852Z",
-        "image": "R.drawable.lansu",
-        "info": "Chinese garden in SW portland. The only attraction in Chinatown.",
-        "more_info": "",
+        "image": "http://c1.staticflickr.com/1/772/23099768736_6cbfd09840_n.jpg",
+        "info": "Chinese botanical garden in downtown Portland.",
         "name": "Lan Su Chinese Garden",
         "objectId": "i5qPM9yN47",
         "type": "attraction",
@@ -266,5 +290,117 @@
         "updatedAt": "2015-11-16T20:11:38.784Z",
         "website": "http://www.viewmenu.com/murata-restaurant/menu?ref=google",
         "phone" : "503-227-0080"
-    }
+    },
+     {
+        "Location": {
+            "__type": "GeoPoint",
+            "latitude": 45.520675,
+            "longitude": -122.681730
+        },
+        "address": "SW 10th & Alder St.",
+        "createdAt": "2015-11-11T21:00:21.830Z",
+        "image": "http://c1.staticflickr.com/3/2691/4100919574_2b4ec58a93_n.jpg",
+        "info": "Food cart with the best chicken and rice in Portland. ",
+        "name": "Khao Man Gai",
+        "type": "food",
+        "updatedAt": "2015-11-16T20:11:38.784Z",
+        "website": "http://khaomangai.com/menu/",
+        "phone" : "971-255-3480"
+    },
+     {
+        "Location": {
+            "__type": "GeoPoint",
+            "latitude": 45.516897,
+            "longitude": -122.675416
+        },
+        "address": "835 SW 2nd Ave",
+        "createdAt": "2015-11-11T21:00:21.830Z",
+        "image": "http://c2.staticflickr.com/6/5597/15266435527_8845c83b42_n.jpg",
+        "info": "Try the Tom Yum Soup",
+        "name": "Luc Lac Vietnamese Kitchen",
+        "type": "food",
+        "updatedAt": "2015-11-16T20:11:38.784Z",
+        "website": "http://luclackitchen.com/assets/ll%20-%20menu%20-%2014-2-14.pdf",
+        "phone" : "(503) 222-0047"
+    },
+     {
+        "Location": {
+            "__type": "GeoPoint",
+            "latitude": 45.512411,
+            "longitude": -122.653363
+        },
+        "address": "1207 SE Hawthorne Blvd",
+        "createdAt": "2015-11-11T21:00:21.830Z",
+        "image": "http://c2.staticflickr.com/4/3500/3801875847_b4a470873e_n.jpg",
+        "info": "Open until 3 a.m. Nearly all items are gluten free.",
+        "name": "Potato Champion",
+        "type": "food",
+        "updatedAt": "2015-11-16T20:11:38.784Z",
+        "website": "http://www.potatochampion.com/",
+        "phone" : "503-683-3797"
+    },
+     {
+        "Location": {
+            "__type": "GeoPoint",
+            "latitude": 45.481025,
+            "longitude": -122.677010
+        },
+        "address": "5901 SW Corbett Ave",
+        "createdAt": "2015-11-11T21:00:21.830Z",
+        "image": "http://c2.staticflickr.com/4/3171/2789688883_f8929de760_m.jpg",
+        "info": "Gluten free fish and chips. 3pm - 5pm happy hour.",
+        "name": "Corbett Fish House",
+        "type": "food",
+        "updatedAt": "2015-11-16T20:11:38.784Z",
+        "website": "http://www.corbettfishhouse.com/",
+        "phone" : "503-246-4434"
+    },
+     {
+        "Location": {
+            "__type": "GeoPoint",
+            "latitude": 45.539913,
+            "longitude": -122.611303
+        },
+        "address": "5035 NE Sandy Blvd",
+        "createdAt": "2015-11-11T21:00:21.830Z",
+        "image": "http://c1.staticflickr.com/7/6234/6254503692_81c42dffc1_m.jpg",
+        "info": "Happy hour 2-6 p.m in the bar Monday - Saturday",
+        "name": "Rheinlander German Restaurant",
+        "type": "food",
+        "updatedAt": "2015-11-16T20:11:38.784Z",
+        "website": "http://www.gustavs.net/food-drink",
+        "phone" : "(503) 288-5503"
+    },
+     {
+        "Location": {
+            "__type": "GeoPoint",
+            "latitude": 45.558846,
+            "longitude": -122.655489
+        },
+        "address": "NE ALBERTA ST. PORTLAND, OR",
+        "createdAt": "2015-11-11T21:00:21.830Z",
+        "image": "http://c2.staticflickr.com/6/5745/23111858902_3774fb0d41_n.jpg",
+        "info": "Community event focused on arts in Alberta. Free wine and food at various locations.",
+        "name": "Last Thursday on Alberta",
+        "type": "attraction",
+        "updatedAt": "2015-11-16T20:11:38.784Z",
+        "website": "http://www.lastthursdayonalberta.com/",
+        "phone" : ""
+    },
+		{
+			 "Location": {
+					 "__type": "GeoPoint",
+					 "latitude": 45.512411,
+					 "longitude": -122.653363
+			 },
+			 "address": "1207 SE Hawthorne Blvd",
+			 "createdAt": "2015-11-11T21:00:21.830Z",
+			 "image": "http://c1.staticflickr.com/5/4135/4749892255_fc651f277a_n.jpg",
+			 "info": "Fancy PBJ sandwiches. GF bread available.",
+			 "name": "PBJ's Grilled",
+			 "type": "food",
+			 "updatedAt": "2015-11-16T20:11:38.784Z",
+			 "website": "http://www.pbjsgrilled.com/",
+			 "phone" : ""
+	 }
 ] }
